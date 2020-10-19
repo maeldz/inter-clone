@@ -18,6 +18,7 @@
 ## :pencil2: Observations
 
 - I wasn't able to test the application on iOS because I don't have a MacBook to do it.
+- All assets you can access with these [files](/original_assets) through [icomoon](https://icomoon.io/app/#/select). One file includes all assets and the other only icons.
 
 ## :fire: Used technologies
 
