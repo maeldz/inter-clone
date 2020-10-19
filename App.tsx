@@ -1,21 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { useFonts } from "expo-font";
+
+import RootProvider from "./src/contexts";
+import Routes from "./src/routes";
+import { AppLoading } from "expo";
+import { LogBox } from "react-native";
 
 export default function App() {
+  LogBox.ignoreLogs(["VirtualizedLists"]);
+
+  const [fontsLoaded] = useFonts({
+    interIcons: require("./src/assets/fonts/inter-icons/font.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <RootProvider>
+      <SafeAreaProvider>
+        <StatusBar style="light" />
+        <Routes />
+      </SafeAreaProvider>
+    </RootProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
