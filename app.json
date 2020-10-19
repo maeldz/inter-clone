@@ -18,7 +18,12 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.develians.interclone",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./src/assets/images/favicon.png"
