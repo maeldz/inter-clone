@@ -92,7 +92,15 @@ const Header: React.FC = () => {
               ],
             }}
           >
-            <LeftSide>
+            <LeftSide
+              style={{
+                opacity: accountInfoTranslateX.interpolate({
+                  inputRange: [(-width - 20) * 0.5, 0],
+                  outputRange: [0, 1],
+                  extrapolate: Extrapolate.CLAMP,
+                }),
+              }}
+            >
               <AccountBalanceLabel>Saldo em conta</AccountBalanceLabel>
               <AccountBalanceRow>
                 <AccountBalance>

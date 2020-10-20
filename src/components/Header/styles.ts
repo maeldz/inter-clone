@@ -28,7 +28,7 @@ export const AccountInfo = styled(Animated.View)`
   justify-content: space-between;
 `;
 
-export const LeftSide = styled.View``;
+export const LeftSide = styled(Animated.View)``;
 
 export const AccountBalanceLabel = styled.Text`
   font-size: 16px;
